@@ -15,6 +15,10 @@ exports.emailService = function(event, context, callback) {
   var time=process.env.ttl;
   let ttl = time*60*1000;
   let expirationTime = (currentTime + ttl);
+  var time=process.env.ttl;
+  console.log(typeof process.env.ttl);
+  var integer = parseInt(time);    // NaN (Not a Number)
+  let ttl = time*60*1000;
   var emailParams = {
     Destination: {
       /* required */
