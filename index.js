@@ -27,12 +27,12 @@ exports.emailService = function(event, context, callback) {
       Body: {
         Text: {
           Charset: "UTF-8",
-          Data: messageDataJson.link.toString()
+          Data: JSON.stringify(messageDataJson.link)
         }
       },
       Subject: {
         Charset: "UTF-8",
-        Data: "Password Reset Link"
+        Data: "Recipe Link"
       }
     },
     Source: "csye6225@"+process.env.DOMAIN_NAME /* required */
