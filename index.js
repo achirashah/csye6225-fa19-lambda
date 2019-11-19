@@ -32,7 +32,7 @@ exports.emailService = function(event, context, callback) {
       },
       Subject: {
         Charset: "UTF-8",
-        Data: "Recipe Link"
+        Data: "myRecipe Link"
       }
     },
     Source: "csye6225@"+process.env.DOMAIN_NAME /* required */
