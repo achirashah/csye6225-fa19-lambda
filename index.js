@@ -12,7 +12,7 @@ exports.emailService = function(event, context, callback) {
   console.log("Test Email: " + messageDataJson.Email);
   console.log("Domain: " +process.env.DOMAIN_NAME);
   let currentTime = new Date().getTime();
-  let ttl = 15*60*1000;
+  let ttl = process.env.ttl*60*1000;
   let expirationTime = (currentTime + ttl);
   var emailParams = {
     Destination: {
