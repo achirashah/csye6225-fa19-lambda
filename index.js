@@ -12,8 +12,13 @@ exports.emailService = function(event, context, callback) {
   console.log("Test Email: " + messageDataJson.Email);
   console.log("Domain: " +process.env.DOMAIN_NAME);
   let currentTime = new Date().getTime();
-  let ttl = 15*60*1000;
+  var time=process.env.ttl;
+  let ttl = time*60*1000;
   let expirationTime = (currentTime + ttl);
+  var time=process.env.ttl;
+  console.log(typeof process.env.ttl);
+  var integer = parseInt(time);    // NaN (Not a Number)
+  let ttl = time*60*1000;
   var emailParams = {
     Destination: {
       /* required */
